@@ -16,7 +16,11 @@
         <forward name="list" path="/list.jsp"/>
       </action>
 
-      <action path="/add" type="com.implmentor.web.AddAction" name="bookmarkForm" scope="request" input="/list.jsp" validate="true">
+      <action path="/add" type="com.implmentor.web.AddAction">
+        <forward name="add" path="/add.jsp"/>
+      </action>
+
+      <action path="/addsave" type="com.implmentor.web.AddSaveAction" name="bookmarkForm" scope="request" input="/add.jsp" validate="true">
         <forward name="list" path="/list.do"/>
       </action>
 

@@ -7,16 +7,16 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import com.implmentor.bo.BookmarkForm;
 
-public class AddAction extends ParentAction {
+public class AddSaveAction extends ParentAction {
 
 	@Override
 	public ActionForward myexecute(ActionMapping mapping, ActionForm form,HttpServletRequest request, HttpServletResponse response) throws Exception {
-		// For some reason, a bookmark form was being put in session.  This makes sure it is gone
-		// so the form will be empty when adding
-		request.getSession().removeAttribute("bookmarkForm");
+		BookmarkForm b = (BookmarkForm)form;
 
-		return mapping.findForward("add");
+		addBookmark(b, request);
+
+		return mapping.findForward("list");
 	}
-
 }

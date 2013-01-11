@@ -1,5 +1,8 @@
-* {
+h1,h2,h3 {
    font-family: 'Indie Flower', arial, serif; 
+}
+* {
+	font-family: arial, serif;
 }
 th {
    background-color: pink;

@@ -27,32 +27,6 @@
   </c:forEach>
     </table>
     <br/>
-    <h2>New Bookmark:</h2>
-    
-	<logic:messagesPresent>
-		<div class="info">
-			<html:messages id="msg">
-				<li>${msg}</li>
-			</html:messages>
-		</div>
-	</logic:messagesPresent>
-	<br/>
-
-    <html:form action="/add" method="POST">
-      <html:hidden property="id"/>
-      <table border="1">
-        <tr>
-          <th>Name</th>
-          <td><html:text property="name" maxlength="40" size="40" value=""/></td>
-        </tr>
-        <tr>
-          <th>URL</th>
-          <td><html:text property="url" maxlength="255" size="40" value=""/></td>
-        </tr>
-        <tr>
-          <td colspan="2"><html:submit value="Save"/></td>
-        </tr>
-      </table>
-    </html:form>
+    <a href="<c:url value="/add.do"/>">Add Bookmark</a>
   </body>
 </html:html>
