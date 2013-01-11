@@ -27,6 +27,12 @@
     </table>
     <br/>
     <h2>New Bookmark:</h2>
+    
+    <html:messages id="msg">
+		<li>${msg}</li>
+	</html:messages>
+	<br/>
+
     <html:form action="/add" method="POST">
       <html:hidden property="id"/>
       <table border="1">

@@ -9,6 +9,10 @@
   <body>
     <h1>Bookmark Edit</h1>
 
+	<html:messages id="msg">
+		<li>${msg}</li>
+	</html:messages>
+	<br/>
     <html:form action="/editsave" method="POST">
       <html:hidden property="id"/>
       <table border="1">

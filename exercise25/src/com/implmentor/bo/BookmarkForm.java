@@ -2,7 +2,12 @@ package com.implmentor.bo;
 
 import java.io.Serializable;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
 
 public class BookmarkForm extends ActionForm implements Serializable {
 	private Integer id;
@@ -10,6 +15,18 @@ public class BookmarkForm extends ActionForm implements Serializable {
 	private String url;
 
 	public BookmarkForm() {
+	}
+
+	@Override
+	public ActionErrors validate(ActionMapping mapping,HttpServletRequest request) {
+		ActionErrors errors = new ActionErrors();
+		if ( (name == null) || (name.length() == 0) ) {
+			errors.add("name", new ActionMessage("name.required"));
+		}
+		if ( (url == null) || (url.length() == 0) ) {
+			errors.add("url", new ActionMessage("url.required"));
+		}
+		return errors;
 	}
 
 	public BookmarkForm(Integer id,String name,String url) {
