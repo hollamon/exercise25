@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
 <struts-config>
     <form-beans>
-      <!-- <form-bean name="exercise22" type="com.implmentor.web.Exercise22Form"/> -->
+      <form-bean name="bookmarkForm" type="com.implmentor.bo.BookmarkForm"/>
     </form-beans>
 
     <global-exceptions>
@@ -12,6 +12,32 @@
     </global-forwards>
 
     <action-mappings>
+      <action path="/list" type="com.implmentor.web.ListAction">
+        <forward name="list" path="/list.jsp"/>
+      </action>
+
+      <action path="/add" type="com.implmentor.web.AddAction" name="bookmarkForm" scope="request" input="/list.jsp" validate="true">
+        <forward name="list" path="/list.do"/>
+      </action>
+
+	  <action path="/edit" type="com.implmentor.web.EditAction">
+        <forward name="edit" path="/edit.jsp"/>
+        <forward name="list" path="/list.do"/>
+	  </action>
+
+      <action path="/editsave" cancellable="true" type="com.implmentor.web.EditSaveAction" name="bookmarkForm" scope="request" input="/edit.jsp" validate="true">
+        <forward name="edit" path="/edit.jsp"/>
+        <forward name="list" path="/list.do"/>
+      </action>
+
+	  <action path="/delete" type="com.implmentor.web.DeleteAction">
+	    <forward name="delete" path="/delete.jsp"/>
+	  </action>
+
+      <action path="/deletebookmark" cancellable="true" type="com.implmentor.web.DeleteBookmarkAction" name="bookmarkForm" scope="request" input="/delete.jsp" validate="false">
+        <forward name="list" path="/list.do"/>
+      </action>
+
     <!-- 
       <action path="/invoice" type="com.implmentor.web.InvoiceAction" parameter="methodToCall">
         <forward name="display" path="/exercise21.jsp"/>

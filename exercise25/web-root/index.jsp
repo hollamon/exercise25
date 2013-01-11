@@ -1,2 +1,4 @@
-<h1>Welcome to my bookmarks manager</h1>
-<%= new java.util.Date() %>
+<% 
+   // Thanks to JP for this suggestion
+   pageContext.forward("/list.do"); 
+ %>
