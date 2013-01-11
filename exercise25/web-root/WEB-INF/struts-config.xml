@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+    <form-beans>
+      <!-- <form-bean name="exercise22" type="com.implmentor.web.Exercise22Form"/> -->
+    </form-beans>
+
+    <global-exceptions>
+    </global-exceptions>
+
+    <global-forwards>
+    </global-forwards>
+
+    <action-mappings>
+    <!-- 
+      <action path="/invoice" type="com.implmentor.web.InvoiceAction" parameter="methodToCall">
+        <forward name="display" path="/exercise21.jsp"/>
+      </action>
+
+      <action path="/exercise24" type="com.implmentor.web.Exercise24Action">
+      	<forward name="edit" path="/exercise24/edit.jsp"/>
+      </action>
+
+	  <action path="/exercise24save" type="com.implmentor.web.Exercise24SaveAction" input="/exercise24/edit.jsp" name="exercise24" validate="true">
+        <forward name="display" path="/exercise24/display.jsp"/>
+      </action>
+
+      <action path="/exercise22" type="com.implmentor.web.Exercise22Action" input="/exercise22/edit.jsp" name="exercise22" validate="true">
+        <forward name="display" path="/exercise22/display.jsp"/>
+      </action>
+
+ 	  <action path="/exercise21" type="com.implmentor.web.Exercise21Action" parameter="methodToCall"/>
+ 	   -->
+    </action-mappings>
+
+    <message-resources parameter="ApplicationResources"/>
+</struts-config>
