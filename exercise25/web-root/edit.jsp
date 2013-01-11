@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="/WEB-INF/tlds/struts-html-el.tld" prefix="html" %>
+<%@ taglib uri="/WEB-INF/tlds/struts-logic-el.tld" prefix="logic" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="site" %>
 <html:html locale="true">
   <head>
@@ -9,9 +10,13 @@
   <body>
     <h1>Bookmark Edit</h1>
 
-	<html:messages id="msg">
-		<li>${msg}</li>
-	</html:messages>
+	<logic:messagesPresent>
+		<div class="info">
+			<html:messages id="msg">
+				<li>${msg}</li>
+			</html:messages>
+		</div>
+	</logic:messagesPresent>
 	<br/>
     <html:form action="/editsave" method="POST">
       <html:hidden property="id"/>
